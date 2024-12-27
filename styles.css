@@ -1,0 +1,239 @@
+/* Basic Body Styles */
+/* Basic Body Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #F1FAEE; /* Light text for contrast */
+    position: relative;
+    overflow-x: hidden; /* Prevent scrollbars from appearing due to blur */
+}
+
+body::before {
+    content: '';
+    position: fixed; /* Ensures the background stays fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('BACKGROUND.webp') center/cover no-repeat; /* Add your background image */
+    filter: blur(4px); /* Adjust blur intensity */
+    z-index: -1; /* Keeps it behind all other elements */
+}
+
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #1D3557, #004F5E); /* Darker gradient */
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+    position: relative;
+}
+
+header img {
+    height: 120px; /* Increased logo size */
+    width: auto;
+    position: absolute;
+    left: 20px;
+    border-radius: 15px;
+    padding: 5px;
+    filter: brightness(1) drop-shadow(0 4px 20px rgba(19, 18, 18, 0.9));
+    transition: filter 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+header img:hover {
+    filter: brightness(1) drop-shadow(0 0 25px rgba(0, 0, 0, 0.5));
+}
+
+
+
+header h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #F1FAEE; /* White text for good contrast */
+    padding: 2rem;
+    font-family: 'Ruben';
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 
+                 0px 0px 5px rgba(255, 255, 255, 0.6); /* Dual shadow for depth and glow */
+}
+
+
+/* Navigation Section */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background: #2C6A8D; /* Lighter teal for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Separation effect */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #F1FAEE;
+    font-size: 18px;
+    padding: 12px 30px; /* Adjusted padding */
+    border-radius: 5px;
+    margin: 0 10px;
+    background: linear-gradient(135deg, #676868, #02181488); /* Muted gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.navigation a:hover {
+    background: linear-gradient(135deg, #00C9A7, #4C8C99); /* Reverse gradient on hover */
+    color: #2D3E50;
+    transform: translateY(-3px) scale(1.05); /* Slight lift and zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Main Section */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 57vh;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+/* Left Column Styling - Food Adulteration Background */
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: overlay; /* Overlay effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds depth */
+    padding: 20px;
+    position: relative;
+    color: #F1FAEE; /* Ensure text is readable */
+}
+
+.left-column button {
+    display: block;
+    width: 200px; /* Slightly wider for better aesthetics */
+    padding: 14px 0; /* More padding for a comfortable click area */
+    margin: 14px 0; /* Balanced spacing */
+    font-size: 18px; /* Consistent font size */
+    font-weight: bold; /* Make text stand out */
+    color: #F1FAEE; /* Light text color */
+    background: linear-gradient(135deg, #007B83, #00D1B2); /* Vibrant gradient */
+    border: none; /* Clean borderless look */
+    border-radius: 25px; /* Rounded edges for a modern look */
+    cursor: pointer; /* Indicates interactivity */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+    text-transform: uppercase; /* Uniform text style */
+    text-align: center; /* Center-align text */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+    position: relative; /* For layering if needed */
+    overflow: hidden; /* Prevent overflow from animations */
+}
+
+.left-column button:hover {
+    background: linear-gradient(135deg, #00D1B2, #007B83); /* Reverse gradient for hover */
+    transform: translateY(-3px) scale(1.05); /* Slight lift and zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    color: #F1FAEE; /* Maintain text color */
+}
+
+.left-column button:active {
+    transform: translateY(1px); /* Button depress effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Less shadow for pressed effect */
+}
+
+.left-column button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Subtle highlight effect */
+    z-index: 1;
+    transition: width 0.3s ease-in-out; /* Smooth highlight animation */
+}
+
+.left-column button:hover::before {
+    width: 100%; /* Full highlight on hover */
+}
+
+.left-column button span {
+    position: relative;
+    z-index: 2; /* Ensure text is above highlight */
+}
+
+
+.right-column {
+    flex: 1;
+    position: relative; /* Keeps the floating text positioned relative to this column */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(150deg,#5d616300,#292c2c90);
+    font-family: 'Ruben',cursive;
+    border-radius: 10px;
+    box-shadow: none;
+    padding: 20px;
+}
+
+.floating-text {
+    position: absolute; /* Positioning text relative to right-column */
+    bottom: 0;
+    left: 5%; /* Slight margin from left */
+    right: 5%; /* Slight margin from right */
+    font-size: 2rem;
+    color: #f5f5f5;
+    animation: floatUp 40s linear infinite; /* Faster animation loop */
+    line-height: 1.5;
+    background: transparent;
+    width: auto;
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -50px;
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        bottom: -50px; /* Start from the bottom */
+        transform: translateY(100%);
+        opacity: 0; /* Fade out at the very end */
+    }
+}
+
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #1D3557, #457B9D); 
+    color: #F1FAEE;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
